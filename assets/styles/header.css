@@ -64,7 +64,60 @@ header .logo img{
     font-size: 15px;
 }
 
+/* Reponsive */
 
+@media (min-width: 1024px) and (max-width: 1439px) {
+    header {
+        padding: 0 100px;
+        gap: 250px;
+    }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+    .wrapper .container {
+        width: 100%;
+    }
+    header {
+        padding: 0 50px;
+        gap: 150px;
+    }
+
+    header .logo{
+        visibility: hidden;
+    }
+
+    .nav-list {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 639px) {
+    header {
+        flex-direction: column;
+        padding: 0 20px;
+        gap: 20px;
+    }
+
+    header .logo{
+        visibility: hidden;
+    }
+
+   
+    .nav-list {
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .wrapper {
+        width: 100%;
+        height: auto;
+    }
+
+    .img-background img {
+        width: 100%;
+    }
+}
 
 
 
