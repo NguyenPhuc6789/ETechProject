@@ -5,7 +5,6 @@ body {
 
 .wrapper {
     width: 1920px;
-    height: 2688px;
     display: flex;
     flex-direction: column;
     justify-content: center;
