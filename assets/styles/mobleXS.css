@@ -1,0 +1,171 @@
+.toggle-menu svg{
+    width: 24px;
+}
+.background-sm {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.container-sm {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sm {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.sm-content{
+    margin-top: 80px;
+}
+
+.logo-etech img{
+    width: 53px;
+    height: 31px;
+    margin: 14px 0 0 17px;
+}
+
+.toggle-menu {
+    padding: 1px 0px 47px 42px;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sm-content .img-slice{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.sm-content .game-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.sm-content .game-info{
+    color: #fff;
+}
+
+.sm-content .game-info p{
+    color: #FFF;
+    text-align: center;
+    font-family: "PingFang SC";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+}
+
+.sm-content .game-info a{
+    text-decoration: none;
+    color: #fff;
+
+}
+
+/* Menu toggle */
+
+.menu-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s ease;
+
+}
+
+.menu-drawer {
+    position: fixed;
+    padding: 20px;
+    inset: 0 40% 0 0;
+    background: #FFF;
+    z-index: 2;
+    transform: translateX(-100%);
+    transition: 0.5s ease;
+
+}
+
+.menucheckbox:checked ~ .menu-overlay{
+    opacity: 1;
+    visibility: visible;
+}
+
+.menucheckbox:checked ~ .menu-drawer{
+    transform: translateX(0);
+    
+}
+
+.menu-drawer ul li a{
+    color: #333;
+    text-decoration: none;
+    display: inline-block;
+    padding: 14px 0;
+
+}
+
+.menu-drawer ul{
+    list-style: none;
+}
+
+
+/* Menu navigation */
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    background: white;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.menu li {
+    text-align: center;
+    flex: 1;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu i {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.menu .active a,
+.menu a:hover {
+    color: black;
+    font-weight: bold;
+}
+
+.menu .active a i {
+    color: black;
+}
