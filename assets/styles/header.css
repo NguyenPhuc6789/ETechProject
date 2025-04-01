@@ -4,28 +4,34 @@ body {
 }
 
 .wrapper {
-    width: 1920px;
+    max-width: 1400px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;      
+    align-items: center;
 }
 
 .wrapper .container {
     width: 100%;
     height: 576px;
-    position: relative; 
-    background-color: #03827E; 
+    position: relative;
+    background-color: #03827E;
     z-index: 0;
     display: flex;
     justify-content: center;
 }
 
-.img-background{
+.img-background {
     position: absolute;
     top: 0;
     z-index: -1;
 }
+
+/* .img-background2 {
+    display: none;
+} */
+
 
 .img-background img {
     width: 100%;
@@ -33,18 +39,23 @@ body {
     display: block;
 }
 
+.heade-toggle {
+    display: none;
+}
 
 header {
     display: flex;
+    max-width: 1400px;
     width: 100%;
     height: 90px;
-    padding: 0px 381.23px 0px 323px;
     align-items: center;
     gap: 404.18px;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.50) 7%, rgba(0, 0, 0, 0.00) 70%);
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
 }
 
-header .logo img{
+header .logo img {
     width: 108.82px;
     height: 64px;
 }
@@ -66,14 +77,72 @@ header .logo img{
     font-size: 15px;
 }
 
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s ease;
+
+}
+
+.menu-drawer {
+    position: fixed;
+    padding: 20px;
+    inset: 0 40% 0 0;
+    background: #FFF;
+    z-index: 2;
+    transform: translateX(-100%);
+    transition: 0.5s ease;
+
+}
+
+.menucheckbox:checked~.menu-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menucheckbox:checked~.menu-drawer {
+    transform: translateX(0);
+
+}
+
+.menu-drawer ul li a {
+    color: #333;
+    text-decoration: none;
+    display: inline-block;
+    padding: 14px 0;
+
+}
+
+.menu-drawer ul {
+    list-style: none;
+}
+
+
+
+
 /* Reponsive */
+@media (min-width: 1439px) and (max-width: 1900px) {
+
+    .img-background2 {
+        display: none;
+    }
+}
 
 @media (min-width: 1024px) and (max-width: 1439px) {
     header {
         padding: 0 100px;
         gap: 250px;
     }
-    .container-sm{
+
+    .container-sm {
+        display: none;
+    }
+
+    .img-background2 img {
         display: none;
     }
 }
@@ -82,19 +151,21 @@ header .logo img{
     .wrapper .container {
         width: 100%;
     }
+
     header {
         padding: 0 50px;
         gap: 150px;
     }
 
-    header .logo{
-        visibility: hidden;
+    header .logo {
+        display: none;
     }
 
     .nav-list {
         gap: 30px;
     }
-    .container-sm{
+
+    .img-background2 {
         display: none;
     }
 }
@@ -106,11 +177,11 @@ header .logo img{
         gap: 20px;
     }
 
-    header .logo{
-        visibility: hidden;
+    header .logo {
+        display: none;
     }
 
-   
+
     .nav-list {
         flex-wrap: wrap;
         gap: 20px;
@@ -125,20 +196,82 @@ header .logo img{
     .img-background img {
         width: 100%;
     }
-    
+
+    .img-background2 {
+        display: none;
+    }
 }
 
 @media (max-width: 375px) {
-    .wrapper {
+
+    .wrapper header {
         display: none;
     }
-    
-    
+
+    .img-background {
+        display: none;
+    }
+
+    .img-background2 {
+        display: block;
+
+    }
+
+    .wrapper .container {
+        width: 100%;
+        background-color: #FFF;
+    }
+
+    .container-sm {
+        position: absolute;
+        top: 0;
+        width: 100%;
+
+    }
+
+    .sm {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .sm .logo-etech {
+        padding-left: 30px;
+    }
+
+    .sm-content {
+        position: absolute;
+        top: 221px;
+        left: 128px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .sm-content .game-info p {
+        color: #FFF;
+        text-align: center;
+        font-family: "PingFang SC";
+        font-size: 24.414px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 27px;
+    }
+
+    .sm-content .game-info a {
+        color: #FFF;
+        text-align: center;
+        font-family: "PingFang SC";
+        font-size: 13.781px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 13px;
+
+    }
+
+    .heade-toggle {
+        display: block;
+    }
+
+
 }
-
-
-
-
-
-
-
